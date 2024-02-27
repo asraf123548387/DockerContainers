@@ -24,7 +24,7 @@ function Home() {
       useEffect(() => {
         const fetchAllHotel = async () => {
           try {
-            const response = await axios.get('http://localhost:8080/user/hotelList');
+            const response = await axios.get('http://localhost:8080/api/user/hotelList');
             if (response.status >= 200 && response.status < 300) {
               setHotel(response.data);
             }
@@ -49,7 +49,7 @@ function Home() {
         }
     }
   }
-  const socket = new SockJS('http://localhost:8080/user/websocket-endpoint');
+  const socket = new SockJS('http://localhost:8080/api/user/websocket-endpoint');
     const stompClient = new Client({
       webSocketFactory: () => socket,
       debug: (str) => {
@@ -78,7 +78,7 @@ function Home() {
   const storeBookingData = async (formData) => {
     try {
       const token = localStorage.getItem('token');
-      const response = await axios.post('http://localhost:8080/onlineBooking', formData, {
+      const response = await axios.post('http://localhost:8080/api/onlineBooking', formData, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`

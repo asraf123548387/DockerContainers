@@ -12,11 +12,6 @@ function RoomManagement() {
   const [showSidebar, setShowSidebar] = useState(true); //this is mainly used for show thr side bar 
   const[editRoomModalOpen,setRoomModalOpen]=useState(false);
   const[roomToEdit,setRoomToEdit]=useState(null);
-
-
-
-
-
   useEffect(() => {
     fetchAllRooms();
   }, [searchQuery]);
@@ -24,7 +19,7 @@ function RoomManagement() {
   const fetchAllRooms = async () => {
     const token = localStorage.getItem('token');
     try {
-      const response = await axios.get('http://localhost:8080/admin/roomList', {
+      const response = await axios.get('http://localhost:8080/api/admin/roomList', {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
@@ -63,7 +58,7 @@ const openEditRoomModal=async (roomId)=>{
   const token =localStorage.getItem('token');
   try {
 
-    const response = await axios.get(`http://localhost:8080/admin/room/${roomId}`, {
+    const response = await axios.get(`http://localhost:8080/api/admin/room/${roomId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
         'Content-Type': 'application/json',

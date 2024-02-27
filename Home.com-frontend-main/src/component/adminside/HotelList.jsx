@@ -33,7 +33,7 @@ function HotelList() {
 
     const fetchAllHotel = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/admin/hotelList', {
+        const response = await axios.get('http://localhost:8080/api/admin/hotelList', {
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ function HotelList() {
     
     try {
 
-      const response = await axios.get(`http://localhost:8080/admin/hotel/${hotelId}`, {
+      const response = await axios.get(`http://localhost:8080/api/admin/hotel/${hotelId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

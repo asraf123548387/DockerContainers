@@ -11,7 +11,7 @@ function BookingHistory() {
         const postBooking = async () => {
             try {
                 const response = await axios.post(
-                    `http://localhost:8080/userBookingList/${userId}`,
+                    `http://localhost:8080/api/userBookingList/${userId}`,
                     {}, // Request body should be here
                     {
                         headers: {

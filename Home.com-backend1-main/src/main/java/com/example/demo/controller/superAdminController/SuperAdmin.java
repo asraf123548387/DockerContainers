@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/SAdmin")
+@RequestMapping("/api/SAdmin")
 public class SuperAdmin {
     @Autowired
     UserDetailsInfoService userDetailsInfoService;

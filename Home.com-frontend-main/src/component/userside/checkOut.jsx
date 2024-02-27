@@ -47,7 +47,7 @@ function CheckOut() {
       const headers = {
         Authorization: `Bearer ${token}`,
       };
-      axios.post('http://localhost:8080/roomBooking', formData, { headers })
+      axios.post('http://localhost:8080/api/roomBooking', formData, { headers })
       .then(response => {
         // Handle successful response
         console.log('Payment successful:', response.data);
@@ -161,7 +161,7 @@ function CheckOut() {
             Navigate('/login')
             Swal.fire("please sign In !");
         }else{
-        axios.get(`http://localhost:8080/userCheckOut/getRoom/${roomId}`,
+        axios.get(`http://localhost:8080/api/userCheckOut/getRoom/${roomId}`,
         {
             headers: {
                 Authorization: `Bearer ${token}` // Include token in request headers
@@ -171,7 +171,7 @@ function CheckOut() {
             setRoomDetails(response.data);
             console.log(response.data);
             // Fetch hotel details based on the room
-            axios.get(`http://localhost:8080/userCheckOut/getHotel/${response.data.hotelId}`, {
+            axios.get(`http://localhost:8080/api/userCheckOut/getHotel/${response.data.hotelId}`, {
                 headers: {
                     Authorization: `Bearer ${token}` // Include token in request headers
                 }
