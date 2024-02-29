@@ -1,6 +1,6 @@
 services:
   app:
-    image: spring-app
+    image: asraf123548387/springapp
     container_name: spring-app-container
     ports:
       - "8080:8080"
@@ -29,7 +29,7 @@ services:
       - spring-boot-network
 
   frontend:
-    image: react-app  
+    image: asraf123548387/reactapp
     container_name: react-app-container
     ports:
       - "3000:3000"
